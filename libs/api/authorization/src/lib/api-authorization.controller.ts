@@ -9,6 +9,6 @@ export class ApiAuthorizationController {
     @UseGuards(AuthGuard("local"))
     @Post("login")
     async login(@Request() req) {
-        return req.user;
+        return this.apiAuthorizationService.login(req.user);
     }
 }

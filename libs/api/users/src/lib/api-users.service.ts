@@ -10,6 +10,7 @@ export class ApiUsersService {
             userId: 1,
             username: "mirae",
             password: "mirae",
+            email: "mirae.dev@gmail.com",
         },
     ];
 

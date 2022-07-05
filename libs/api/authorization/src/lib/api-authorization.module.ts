@@ -5,11 +5,21 @@ import { ApiAuthorizationService } from "./api-authorization.service";
 import { ApiUsersModule } from "@nox/api/users";
 import { PassportModule } from "@nestjs/passport";
 import { LocalStrategy } from "./local.strategy";
+import { JwtModule } from "@nestjs/jwt";
+import { jwtConstants } from "./constants";
+import { JwtStrategy } from "./jwt.strategy";
 
 @Module({
-    imports: [ApiUsersModule, PassportModule],
+    imports: [
+        ApiUsersModule,
+        PassportModule,
+        JwtModule.register({
+            secret: jwtConstants.secret,
+            signOptions: { expiresIn: "60s" },
+        }),
+    ],
     controllers: [ApiAuthorizationController],
-    providers: [ApiAuthorizationService, LocalStrategy],
+    providers: [ApiAuthorizationService, LocalStrategy, JwtStrategy],
     exports: [ApiAuthorizationService],
 })
 export class ApiAuthorizationModule {}
