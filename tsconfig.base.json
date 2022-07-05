@@ -14,7 +14,10 @@
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
-        "paths": {}
+        "paths": {
+            "@nox/api/authorization": ["libs/api/authorization/src/index.ts"],
+            "@nox/api/users": ["libs/api/users/src/index.ts"]
+        }
     },
     "exclude": ["node_modules", "tmp"]
 }
