@@ -16,6 +16,7 @@
         "baseUrl": ".",
         "paths": {
             "@nox/api/authorization": ["libs/api/authorization/src/index.ts"],
+            "@nox/api/common": ["libs/api/common/src/index.ts"],
             "@nox/api/users": ["libs/api/users/src/index.ts"]
         }
     },
